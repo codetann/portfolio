@@ -1,0 +1,25 @@
+---
+interface Props {
+  icon: string;
+  href: string;
+}
+
+const { href, icon } = Astro.props;
+---
+
+<a href={href} target="_blank">
+  <i class={icon} aria-hidden="true"></i>
+</a>
+
+<style>
+  i {
+    color: var(--white-alpha-600);
+    font-size: 1.5rem;
+    transition: all 0.15s ease-in-out;
+  }
+
+  i:hover {
+    color: var(--white-alpha-800);
+    transform: scale(0.98);
+  }
+</style>

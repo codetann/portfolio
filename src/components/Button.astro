@@ -1,0 +1,45 @@
+---
+import { type IconName, icons } from "../utils";
+type Props = {
+  onClick: () => void;
+  width?: string;
+  rightIcon?: IconName;
+  leftIcon?: IconName;
+};
+
+const { onClick, width = "fit", rightIcon, leftIcon } = Astro.props;
+---
+
+<button>
+  {leftIcon && <i class={icons[leftIcon]} />}
+  <slot />
+  {rightIcon && <i class={icons[rightIcon]} />}
+</button>
+
+<style define:vars={{ width }}>
+  button {
+    color: var(--white-alpha-700);
+    background: var(--brand-light-gray);
+    width: var(--width);
+    border: 1px solid var(--brand-light-gray);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    font-weight: semi-bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+    color: var(--white-alpha-900) !important;
+  }
+
+  button:active {
+    transform: scale(0.98);
+    color: var(--white-alpha-900);
+  }
+</style>

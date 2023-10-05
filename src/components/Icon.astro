@@ -1,0 +1,20 @@
+---
+import { type IconName, icons } from "../utils";
+
+type Props = {
+  name: IconName;
+  size?: number;
+  color?: string;
+};
+
+const { name, size = 16, color = "var(--white-alpha-600)" } = Astro.props;
+---
+
+<i class={icons[name]}></i>
+
+<style define:vars={{ size: `${size}px`, color }}>
+  i {
+    font-size: var(--size);
+    color: var(--color);
+  }
+</style>
