@@ -1,4 +1,7 @@
-# Astro Starter Kit: Basics
+# Portfolio
+
+TODO: add pop up over social icons that give a preview to that site.
+    - include profie, details around that page, etc...
 
 ```sh
 npm create astro@latest -- --template basics

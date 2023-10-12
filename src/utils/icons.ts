@@ -9,6 +9,8 @@ export const icons = {
   ["arrow-right"]: "fa-solid fa-arrow-right",
   ["arrow-up"]: "fa-solid fa-arrow-up",
   ["arrow-left"]: "fa-solid fa-arrow-left",
+  ["breifcase"]: "fa-solid fa-briefcase",
+  ["envelope"]: "fa-solid fa-envelope",
 };
 
 export type IconName = keyof typeof icons;
