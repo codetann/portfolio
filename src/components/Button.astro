@@ -19,10 +19,10 @@ const { onClick, width = "fit", rightIcon, leftIcon } = Astro.props;
 <style define:vars={{ width }}>
   button {
     color: var(--white-alpha-700);
-    background: var(--brand-light-gray);
+    background: #1d1d1f;
     width: var(--width);
-    border: 1px solid var(--brand-light-gray);
-    padding: 0.5rem 1rem;
+    border: 1px solid #1d1d1f;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.15s ease-in-out;
@@ -31,6 +31,7 @@ const { onClick, width = "fit", rightIcon, leftIcon } = Astro.props;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    font-size: var(--font-size-sm);
   }
 
   button:hover {

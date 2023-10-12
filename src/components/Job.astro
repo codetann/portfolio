@@ -1,0 +1,62 @@
+---
+import Avatar from "./Avatar.astro";
+interface Props {
+  image: string;
+  company: string;
+  title: string;
+  date: string;
+}
+
+const { company, date, image, title } = Astro.props;
+---
+
+<div class="container">
+  <div class="img">
+    <Avatar size="xs" image={image} title="logo" />
+  </div>
+  <div class="details">
+    <p class="company">{company}</p>
+    <p class="title">{title}</p>
+  </div>
+  <div class="spacer"></div>
+  <p class="date">{date}</p>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .details {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .details p {
+    line-height: 0;
+  }
+
+  .company {
+    color: var(--white);
+  }
+
+  .title {
+    color: var(--white-alpha-600);
+    font-size: var(--font-size-sm);
+  }
+
+  .date {
+    color: var(--white-alpha-600);
+    font-size: var(--font-size-sm);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+</style>
