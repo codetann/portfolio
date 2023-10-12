@@ -13,6 +13,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: var(--font-sans);
+  font-size: 95.5%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,5 +63,8 @@ h6 {
 }
 
 p {
-  color: var(--white-alpha-600)
+  font-size: var(--font-size-md);
+  color: var(--white-alpha-700);
+  font-weight: var(--font-weight-light);
+  line-height: var(--leading-taller);
 }
