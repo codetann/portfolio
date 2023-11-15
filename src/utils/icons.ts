@@ -11,6 +11,10 @@ export const icons = {
   ["arrow-left"]: "fa-solid fa-arrow-left",
   ["breifcase"]: "fa-solid fa-briefcase",
   ["envelope"]: "fa-solid fa-envelope",
+  ["node"]: "fa-brands fa-node-js",
+  ["javascript"]: "fa-brands fa-js-square",
+  ["typescript"]: "fa-brands fa-ts-square",
+  ["python"]: "fa-brands fa-python",
 };
 
 export type IconName = keyof typeof icons;

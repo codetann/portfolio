@@ -1,0 +1,28 @@
+---
+interface Props {
+  placeholder?: string;
+}
+
+const { placeholder }: Props = Astro.props;
+---
+
+<textarea placeholder={placeholder}></textarea>
+
+<style>
+  textarea {
+    width: 100%;
+    color: var(--white-alpha-700);
+    background: #1d1d1f;
+    border: 1px solid var(--white-alpha-200);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    font-weight: semi-bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-sm);
+  }
+</style>

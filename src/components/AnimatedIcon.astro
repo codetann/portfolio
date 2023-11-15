@@ -1,0 +1,52 @@
+---
+interface Props {
+  icon: any;
+  color: string;
+  size?: string;
+  label?: string;
+}
+
+const { icon: Icon, color, size = "2rem", label }: Props = Astro.props;
+---
+
+<div>
+  <div class="tooltip">{label}</div>
+  <Icon size={size} />
+</div>
+
+<style define:vars={{ color }}>
+  div {
+    /* color: var(--white-alpha-400); */
+    color: var(--color);
+    transition: all 0.15s ease-in-out;
+    position: relative;
+  }
+
+  div:hover {
+    color: var(--color);
+    transform: scale(1.2);
+
+    .tooltip {
+      opacity: 1;
+    }
+  }
+
+  .tooltip {
+    transition: all 0.2s ease-in-out;
+
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0.5rem;
+    background: var(--white-alpha-100);
+    color: var(--white);
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0;
+
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+</style>

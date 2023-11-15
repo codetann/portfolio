@@ -1,0 +1,48 @@
+---
+type Props = {
+  image: string;
+  title: string;
+  size?: "xs" | "sm" | "md" | "lg";
+};
+
+const { image, title, size = "sm" } = Astro.props;
+---
+
+<nav>
+  <div class="current">Home</div>
+  <div>Projects</div>
+  <div>Contact</div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 2rem;
+    height: 2.5rem;
+    width: 15rem;
+    background: #202021;
+    border: 1px solid var(--white-alpha-100);
+    blur: 5px;
+    padding: var(--spacing-1-5);
+    position: fixed;
+    top: 1rem;
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: var(--shadow-md);
+    z-index: 9999;
+  }
+
+  div {
+    color: white;
+    font-size: var(--font-size-sm);
+    opacity: 0.5;
+  }
+
+  .current {
+    color: var(--blue-300);
+    opacity: 1;
+  }
+</style>

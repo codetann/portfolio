@@ -1,0 +1,45 @@
+---
+import {
+  BiLogoReact,
+  BiLogoTypescript,
+  BiLogoJavascript,
+  BiLogoFlutter,
+  BiLogoPython,
+  BiLogoNodejs,
+  BiLogoPhp,
+} from "react-icons/bi";
+import { SiSvelte } from "react-icons/si";
+import { DiDart } from "react-icons/di";
+import AnimatedIcon from "../../components/AnimatedIcon.astro";
+---
+
+<section>
+  <span class="icons">
+    <AnimatedIcon icon={BiLogoFlutter} color="#54c0f4" label="Flutter" />
+    <AnimatedIcon icon={BiLogoReact} color="#04d8f9" label="React" />
+    <AnimatedIcon icon={BiLogoTypescript} color="#007acc" label="Typescript" />
+    <AnimatedIcon icon={BiLogoJavascript} color="#e8c012" label="Javascript" />
+    <AnimatedIcon icon={BiLogoPython} color="#f9c646" label="Python" />
+    <AnimatedIcon icon={BiLogoNodejs} color="#8cc84b" label="Nodejs" />
+    <AnimatedIcon icon={SiSvelte} color="#ff3e00" label="Svelte" />
+    <AnimatedIcon icon={DiDart} color="#00b4ab" label="Dart" />
+    <AnimatedIcon icon={BiLogoPhp} color="#8993be" label="PHP" />
+  </span>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: var(--spacing-16);
+    gap: var(--spacing-8);
+  }
+
+  .icons {
+    display: flex;
+    gap: var(--spacing-8);
+  }
+</style>
