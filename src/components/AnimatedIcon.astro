@@ -7,24 +7,46 @@ interface Props {
 }
 
 const { icon: Icon, color, size = "2rem", label }: Props = Astro.props;
+
+const randomCSSRotation = () => {
+  const rotations = [
+    "rotate(0deg)",
+    "rotate(20deg)",
+    "rotate(-20deg)",
+    "rotate(10deg)",
+    "rotate(-10deg)",
+    "rotate(5deg)",
+    "rotate(-5deg)",
+  ];
+  return rotations[Math.floor(Math.random() * rotations.length)];
+};
 ---
 
 <div>
-  <div class="tooltip">{label}</div>
-  <Icon size={size} />
+  <div class="icon">
+    <Icon size={size} />
+  </div>
+  <!-- <div class="tooltip">{label}</div> -->
 </div>
 
-<style define:vars={{ color }}>
+<style define:vars={{ color, rotation: randomCSSRotation() }} lang="scss">
+  .icon {
+    transform: var(--rotation);
+  }
   div {
     /* color: var(--white-alpha-400); */
     color: var(--color);
     transition: all 0.15s ease-in-out;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   div:hover {
     color: var(--color);
-    transform: scale(1.2);
+    transform: scale(1.1);
 
     .tooltip {
       opacity: 1;
@@ -33,16 +55,12 @@ const { icon: Icon, color, size = "2rem", label }: Props = Astro.props;
 
   .tooltip {
     transition: all 0.2s ease-in-out;
+    padding: 0.2rem;
 
-    position: absolute;
-    top: -2.5rem;
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding: 0.5rem;
     background: var(--white-alpha-100);
     color: var(--white);
     border-radius: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 500;
     opacity: 0;
 

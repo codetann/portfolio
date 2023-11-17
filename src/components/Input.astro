@@ -1,12 +1,13 @@
 ---
 interface Props {
+  name?: string;
   placeholder?: string;
 }
 
-const { placeholder }: Props = Astro.props;
+const { name, placeholder }: Props = Astro.props;
 ---
 
-<input type="text" placeholder={placeholder} />
+<input type="text" name={name} placeholder={placeholder} />
 
 <style>
   input {
@@ -17,12 +18,23 @@ const { placeholder }: Props = Astro.props;
     padding: 0.75rem 1rem;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.1s ease-in-out;
     font-weight: semi-bold;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     font-size: var(--font-size-sm);
+  }
+
+  input:hover {
+    opacity: 0.8;
+  }
+
+  input:focus {
+    border: 1px solid var(--yellow-400);
+    outline: none;
+    opacity: 1;
+    background: transparent;
   }
 </style>

@@ -12,9 +12,12 @@ import Button from "../components/Button.astro";
 import Input from "../components/Input.astro";
 import TextArea from "../components/TextArea.astro";
 import { Fa500Px } from "react-icons/fa";
+import { GiPlasticDuck } from "react-icons/gi";
+import { AnimatedDuck } from "../components/AnimatedDuck";
 
 import HeaderSection from "./home/HeaderSection.astro";
 import IconSection from "./home/IconSection.astro";
+import FooterSection from "./home/FooterSection.astro";
 ---
 
 <Layout title="Tanner Thomas">
@@ -44,11 +47,24 @@ import IconSection from "./home/IconSection.astro";
             image="https://media.licdn.com/dms/image/C5603AQFpCo9JlAAIMQ/profile-displayphoto-shrink_100_100/0/1542654320258?e=1702512000&v=beta&t=X0CUWxSgdr5y6x_csOTqL40fVb5l0riE1n3dSbN2lSI"
             quote="Tanner Thomas is simply amazing! I love this guy. Anyone who has the need for a ridiculously talented engineer please hit him up."
           />
+          <div class="time">
+            <GiPlasticDuck
+              size={50}
+              style={{
+                color: "var(--yellow-400",
+              }}
+            />
+            <!-- <img
+              class="testimonial__image"
+              src="https://1000logos.net/wp-content/uploads/2020/03/TIME-Logo.png"
+            />
+            <p>2006 person of the year.</p> -->
+          </div>
         </div>
         <div class="detail__cards">
           <aside class="work__card">
             <span>
-              <Icon size={22} name="breifcase" />
+              <Icon size={22} name="breifcase" color="var(--yellow-400)" />
               <p>Work</p>
             </span>
             <Job
@@ -81,23 +97,30 @@ import IconSection from "./home/IconSection.astro";
           </aside>
           <aside class="contact__card">
             <span>
-              <Icon size={22} name="envelope" />
+              <Icon size={22} name="envelope" color="var(--yellow-400)" />
               <p>Get in touch</p>
             </span>
             <p>
               Whether you have a question or just want to say hi, I'll try my
               best to get back to you!
             </p>
-            <Input placeholder="Name" />
-            <Input placeholder="Email" />
-            <TextArea placeholder="Message" />
-            <Button rightIcon="arrow-right" onClick={() => null} width="100%">
+
+            <Input placeholder="Name" name="name" />
+            <Input placeholder="Email" name="email" />
+            <TextArea placeholder="Message" name="message" />
+            <Button
+              rightIcon="arrow-right"
+              onClick={() => null}
+              type="submit"
+              width="100%"
+            >
               Send Message
             </Button>
           </aside>
         </div>
       </div>
     </section>
+    <FooterSection />
   </Page>
 
   <style>
@@ -109,6 +132,33 @@ import IconSection from "./home/IconSection.astro";
       width: 100%;
       padding: var(--spacing-16);
       gap: var(--spacing-8);
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: var(--spacing-4);
+      }
+    }
+
+    .time {
+      display: flex;
+      /* background: #1d1d1f; */
+      flex-direction: column;
+      background:;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-2);
+      height: 100%;
+      border-radius: var(--radius-xl);
+      /* border: 1px solid var(--white-alpha-200); */
+      min-height: 10rem;
+    }
+
+    .testimonial__image {
+      height: 4rem;
+
+      object-fit: cover;
+      object-position: center;
     }
 
     .heading__text {
@@ -195,9 +245,10 @@ import IconSection from "./home/IconSection.astro";
       gap: var(--spacing-8);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       .details {
-        flex-direction: column;
+        flex-direction: column-;
+        flex-wrap: wrap;
       }
     }
   </style>

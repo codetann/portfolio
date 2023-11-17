@@ -36,10 +36,27 @@ import AnimatedIcon from "../../components/AnimatedIcon.astro";
     width: 100%;
     padding: var(--spacing-16);
     gap: var(--spacing-8);
+    overflow: hidden;
+    padding-top: var(--spacing-6);
+
+    padding-bottom: var(--spacing-28);
   }
 
   .icons {
     display: flex;
     gap: var(--spacing-8);
+  }
+
+  /* mobile media query */
+  @media (max-width: 768px) {
+    .icons {
+      width: 100%;
+      transform: scale(1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-8);
+    }
   }
 </style>

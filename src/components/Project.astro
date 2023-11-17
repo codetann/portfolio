@@ -1,0 +1,49 @@
+---
+import Avatar from "./Avatar.astro";
+type Props = {
+  image: string;
+  url: string;
+  title: string;
+  description: string;
+};
+
+const { image, url, title, description } = Astro.props;
+---
+
+<div class="container">
+  <div class="avatar">
+    <Avatar image={image} title={title} />
+  </div>
+  <h5 class="title">{title}</h5>
+  <p class="description">{description}</p>
+  <a>{url}</a>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 16rem;
+    width: 100%;
+    /* background: var(--white-alpha-50); */
+    padding: 1.5rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--white-alpha-200);
+  }
+  .description {
+    padding-top: 0.5rem;
+    font-size: var(--font-size-sm);
+  }
+  .title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--white-alpha-900);
+    padding-top: 1rem;
+  }
+  a {
+    margin-top: auto;
+    color: var(--yellow-400);
+  }
+</style>

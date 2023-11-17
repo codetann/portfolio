@@ -12,18 +12,28 @@ const { href, icon } = Astro.props;
 </a>
 
 <style>
+  a {
+    background: var(--white-alpha-100);
+    padding: 0.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  a:hover {
+    background: var(--white-alpha-50);
+
+    & > i {
+      color: var(--yellow-400);
+      transform: scale(0.95);
+    }
+  }
+
   i {
-    color: var(--white-alpha-600);
-    font-size: 1.5rem;
-    transition: all 0.15s ease-in-out;
-  }
-
-  i:hover {
     color: var(--white-alpha-800);
-    transform: scale(0.95);
+    font-size: 1.3rem;
+    transition: all 0.1s ease-in-out;
   }
 
-  i::after {
+  /* i::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -33,18 +43,18 @@ const { href, icon } = Astro.props;
     left: 0;
     background-color: transparent;
     transition: all 0.15s ease-in-out;
-    border-radius: 0.1rem;
+    border-radius: 0.08rem;
   }
 
   /* i hover after     */
-  i:hover::after {
+  /* i:hover::after {
     content: "";
     position: absolute;
     width: 100%;
-    height: 0.2rem;
+    height: 0.15rem;
     bottom: -0.5rem;
     transform: translateY(0);
     left: 0;
-    background-color: var(--white-alpha-800);
-  }
+    background-color: var(--yellow-400);
+  } */ */
 </style>

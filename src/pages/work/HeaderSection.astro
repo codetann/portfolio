@@ -1,0 +1,56 @@
+---
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<section>
+  <h2>A breif look at my employment history.</h2>
+  <p>
+    I’ve worked on tons of little projects over the years but these are the ones
+    that I’m most proud of. Many of them are open-source, so if you see
+    something that piques your interest, check out the code and contribute if
+    you have ideas for how it can be improved.
+  </p>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: var(--spacing-16);
+    gap: var(--spacing-8);
+
+    margin-top: var(--spacing-28);
+  }
+  h2 {
+    max-width: 800px;
+    color: var(--yellow-400);
+  }
+
+  p {
+    max-width: 750px;
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      width: 100%;
+      font-size: 2.5rem;
+      text-align: left;
+      font-weight: var(--font-weight-black);
+    }
+
+    section {
+      padding: var(--spacing-6);
+      padding-top: var(--spacing-18);
+      gap: var(--spacing-4);
+
+      /* padding-bottom: var(--spacing-28); */
+
+      margin-top: 10rem;
+    }
+  }
+</style>

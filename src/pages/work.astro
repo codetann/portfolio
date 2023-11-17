@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Page from "../layouts/Page.astro";
 import FooterSection from "./home/FooterSection.astro";
 // components
-import HeaderSection from "./projects/HeaderSection.astro";
-import ProjectSection from "./projects/ProjectSection.astro";
+import HeaderSection from "./work/HeaderSection.astro";
+import HistorySection from "./work/HistorySection.astro";
 import { GiPlasticDuck } from "react-icons/gi";
 
 type Props = {};
@@ -15,7 +15,8 @@ const {} = Astro.props;
 <Layout title="Work">
   <Page>
     <HeaderSection />
-    <ProjectSection />
+
+    <HistorySection />
     <div class="icon-container">
       <GiPlasticDuck
         size={50}

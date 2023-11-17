@@ -33,6 +33,7 @@ import IconLink from "../../components/IconLink.astro";
     width: 100%;
     padding: var(--spacing-16);
     gap: var(--spacing-8);
+    padding-bottom: var(--spacing-28);
   }
 
   .heading__text {
@@ -42,10 +43,11 @@ import IconLink from "../../components/IconLink.astro";
     align-items: flex-start;
     width: 100%;
     gap: var(--spacing-4);
-    padding-top: var(--spacing-16);
+    padding-top: var(--spacing-28);
   }
   .heading__text h2 {
     max-width: 800px;
+    color: var(--yellow-400);
   }
   .heading__text p {
     max-width: 750px;
@@ -56,6 +58,32 @@ import IconLink from "../../components/IconLink.astro";
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    gap: var(--spacing-8);
+    gap: var(--spacing-4);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    h2 {
+      width: 100%;
+      font-size: 2.5rem;
+      text-align: left;
+      margin-top: 1rem;
+      font-weight: var(--font-weight-black);
+    }
+
+    section {
+      padding: var(--spacing-6);
+      padding-top: var(--spacing-18);
+
+      padding-bottom: var(--spacing-28);
+
+      margin-top: 5rem;
+    }
+    .heading__text {
+      padding-top: var(--spacing-16);
+
+      text-align: left;
+      justify-content: center !important;
+    }
   }
 </style>

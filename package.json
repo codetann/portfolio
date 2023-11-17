@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.3",
+    "@notionhq/client": "^2.2.13",
     "astro": "^3.2.2",
     "astro-icon": "^0.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "sass": "^1.69.5"
   }
 }

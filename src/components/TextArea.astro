@@ -1,12 +1,13 @@
 ---
 interface Props {
+  name?: string;
   placeholder?: string;
 }
 
-const { placeholder }: Props = Astro.props;
+const { name, placeholder }: Props = Astro.props;
 ---
 
-<textarea placeholder={placeholder}></textarea>
+<textarea name={name} placeholder={placeholder}></textarea>
 
 <style>
   textarea {
@@ -24,5 +25,10 @@ const { placeholder }: Props = Astro.props;
     justify-content: center;
     gap: 0.5rem;
     font-size: var(--font-size-sm);
+  }
+
+  textarea:focus {
+    border: 1px solid var(--yellow-400);
+    outline: none;
   }
 </style>
